@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Tab Manager Pro",
+    "version": "1.0",
+  
+    "description": "Helps the user manage their tabs in a constructive way, leading a popup at a definable number of tabs opened. Certain actions are able to be done when you decide to do something about it, such as separating into a new window, or simply closing them.",
+  
+    "icons": {
+      "48": "favicon.ico"
+    },
+
+    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net; object-src 'self'",
+
+
+    "background": {
+        "scripts": ["background-script.js"],
+        "persistent": false
+      },
+      
+    "permissions": [
+        "<all_urls>",
+        "tabs",
+        "storage"
+      ],
+      
+      "browser_action": {
+        "default_popup": "Tabs/settings.html"
+      }
+      
+  }
+  

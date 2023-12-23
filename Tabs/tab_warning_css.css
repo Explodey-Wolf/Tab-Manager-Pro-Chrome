@@ -1,0 +1,30 @@
+.tab_warning_bg {
+    background-image: linear-gradient(rgb(48, 3, 47), rgb(28, 0, 28));
+}
+
+.block {
+    background-color: rgba(127, 126, 126, 0.261);
+    transition: ease-in-out 0.5s;
+    width: 75%;
+    border-radius: 100px;
+    border-color: grey;
+    border: 50px
+    
+}
+.block:hover {
+    background-color: rgba(87, 87, 87, 0.511);
+    transition: ease-in-out 0.5s;
+}
+
+.header-color {
+    background-color: rgba(116, 8, 85, 0.4);
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: 20px;
+    transition: ease-in-out 0.25s;
+    color: white
+}
+.header-color:hover {
+    background-color: rgba(116, 8, 85, 0.6);
+}

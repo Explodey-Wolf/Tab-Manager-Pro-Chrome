@@ -1,0 +1,97 @@
+.tab_warning_bg {
+    background-image: linear-gradient(rgb(48, 3, 47), rgb(28, 0, 28));
+}
+
+.header-color {
+    background-color: rgba(116, 8, 85, 0.4);
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: 20px;
+    transition: ease-in-out 0.25s;
+    color: white
+}
+.header-color:hover {
+    background-color: rgba(116, 8, 85, 0.6);
+}
+
+.unselectable * {
+    user-select: none;
+}
+
+.selected td{
+    transition: 0.2s ease-in-out;
+    background-color: rgba(0, 255, 255, 0.46) !important;
+    --bs-table-bg-type: rgba(0, 255, 255, 0.46) !important;
+
+}
+
+
+
+table {
+    --bs-table-hover-bg: rgba(0, 255, 255, 0.345) !important;
+}
+
+.table-hover tbody tr:active td, .table-hover tbody tr:active th {
+    background-color: rgba(0, 255, 255, 0.45) !important;
+  }
+
+.context-menu {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 2px rgba(128, 128, 128, 0.3);
+    position: absolute;
+    width: fit-content;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    visibility: hidden;
+}
+
+.context-button {
+    background-color: transparent;
+    display: block;
+    border-radius: 2px;
+    border-width: 0px;
+    width: 100%;
+    padding: 5px 15px;
+    
+}
+
+.context-button-parent {
+    margin: 4px 6px;
+    display: block;
+    transition: background-color 0.2s ease;
+    background-color: white;
+}
+
+.context-button-parent:hover {
+    background-color: rgba(116, 116, 116, 0.178);
+}
+
+.context-button-parent:active {
+    background-color: rgba(116, 116, 116, 0.34);
+}
+
+.context-button.close {
+    background-color: rgba(255, 0, 0, 0.276);
+}
+
+.context-button.close:hover {
+    background-color: rgba(255, 0, 0, 0.359);
+}
+
+.context-button.close:active {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.context-button.window {
+    background-color: rgba(0, 224, 224, 0.457);
+}
+
+.context-button.window:hover {
+    background-color: rgba(0, 224, 224, 0.6);
+}
+.context-button.window:active {
+    background-color: rgb(73, 255, 255);
+}
