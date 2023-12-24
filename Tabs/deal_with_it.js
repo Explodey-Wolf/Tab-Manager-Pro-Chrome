@@ -1,3 +1,4 @@
+chrome.storage.session.setAccessLevel({ accessLevel: 'TRUSTED_AND_UNTRUSTED_CONTEXTS' });
 let selected_tab = 0;
 let selected_tabs = []
 var keys = {};
@@ -12,7 +13,7 @@ async function main() {
 
 
 async function loaded() {
-    let tabs = await browser.tabs.query({currentWindow: true});
+    let tabs = await chrome.tabs.query({currentWindow: true});
     let tabs_array = [];
     const tabs_table = document.querySelector("#tabs_table")
     const nodes = Array.from(tabs_table.childNodes)
@@ -167,16 +168,16 @@ async function contextmenu_buttons() {
     let window = contextmenu.querySelector("#window");
     close.addEventListener("click", () => {
         for (let tab of selected_tabs) {
-            tab_id = browser.tabs.query({})
-            browser.tabs.remove(parseInt(tab.id.replace("item-", "")));
+            tab_id = chrome.tabs.query({})
+            chrome.tabs.remove(parseInt(tab.id.replace("item-", "")));
         }
         reset_tabs()
     });
     document.addEventListener("keyup", (e) => {
         if (e.key == "Delete") {
             for (let tab of selected_tabs) {
-                tab_id = browser.tabs.query({})
-                browser.tabs.remove(parseInt(tab.id.replace("item-", "")));
+                tab_id = chrome.tabs.query({})
+                chrome.tabs.remove(parseInt(tab.id.replace("item-", "")));
             }
             reset_tabs()
             console.log(document.querySelector("#tabs_parent").scrollTop);
@@ -186,7 +187,7 @@ async function contextmenu_buttons() {
         let urls = []
         for (let tab of selected_tabs) {
             let tab_id = parseInt(tab.id.replace("item-", ""))
-            let temp = await browser.tabs.get(tab_id);
+            let temp = await chrome.tabs.get(tab_id);
             if (temp.url == "about:newtab") {
                 continue
             }
@@ -198,9 +199,9 @@ async function contextmenu_buttons() {
         }
 
         console.log(window_info.url)
-        browser.windows.create(window_info)
+        chrome.windows.create(window_info)
         for (let tab of selected_tabs) {
-            browser.tabs.remove(parseInt(tab.id.replace("item-", "")))
+            chrome.tabs.remove(parseInt(tab.id.replace("item-", "")))
         }
 
         reset_tabs()

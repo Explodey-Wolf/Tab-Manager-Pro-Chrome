@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Tab Manager Pro",
     "version": "1.0",
   
@@ -8,22 +8,27 @@
     "icons": {
       "48": "favicon.ico"
     },
+    
+    "host_permissions": [
+      "<all_urls>",
+      "https://cdn.jsdelivr.net/"
+    ],
+    
 
-    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net; object-src 'self'",
-
+    "content_security_policy": {
+      "extension_pages": "script-src 'self' 'self'"
+    },
 
     "background": {
-        "scripts": ["background-script.js"],
-        "persistent": false
+        "service_worker": "background-script.js"
       },
       
     "permissions": [
-        "<all_urls>",
         "tabs",
         "storage"
       ],
       
-      "browser_action": {
+      "action": {
         "default_popup": "Tabs/settings.html"
       }
       
